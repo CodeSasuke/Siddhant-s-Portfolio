@@ -90,6 +90,24 @@ const GithubButton = styled.a`
     color: ${({ theme }) => theme.text_primary};
   }
 `;
+const LeetcodeButton = styled.a`
+  border: 1px solid ${({ theme }) => theme.primary};
+  color: ${({ theme }) => theme.primary};
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  cursor: pointer;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.6s ease-in-out;
+  text-decoration: none;
+  &:hover {
+    background: ${({ theme }) => theme.primary};
+    color: ${({ theme }) => theme.text_primary};
+  }
+`;
 
 const MobileIcon = styled.div`
   height: 100%;
@@ -145,8 +163,9 @@ const Navbar = () => {
           <NavLink href="#About">About</NavLink>
           <NavLink href="#Skills">Skills</NavLink>
           {/* <NavLink href="#Experience">Experience</NavLink> */}
-          <NavLink href="#Projects">Projects</NavLink>
+          {/* <NavLink href="#Projects">Projects</NavLink> */}
           <NavLink href="#Education">Education</NavLink>
+          <NavLink href={Bio.Leetcode}target="_Blank">Leetcode</NavLink>
         </NavItems>
 
         {isOpen && (
@@ -160,9 +179,9 @@ const Navbar = () => {
             <NavLink onClick={() => setIsOpen(!isOpen)} href="#Experience">
               Experience
             </NavLink>
-            <NavLink onClick={() => setIsOpen(!isOpen)} href="#Projects">
+            {/* <NavLink onClick={() => setIsOpen(!isOpen)} href="#Projects">
               Projects
-            </NavLink>
+            </NavLink>  */}
             <NavLink onClick={() => setIsOpen(!isOpen)} href="#Education">
               Education
             </NavLink>
@@ -176,9 +195,23 @@ const Navbar = () => {
             >
               Github Profile
             </GithubButton>
+            {/* <LeetcodeButton
+              href={Bio.github}
+              target="_Blank"
+              style={{
+                background: theme.primary,
+                color: theme.text_primary,
+              }}
+            >
+              Github Profile
+            </LeetcodeButton> */}
           </MobileMenu>
         )}
-
+        {/* <ButtonContainer>
+          <GithubButton href={Bio.Leetcode} target="_Blank">
+            LeetcodeProfile
+          </GithubButton>
+        </ButtonContainer> */}
         <ButtonContainer>
           <GithubButton href={Bio.github} target="_Blank">
             Github Profile
